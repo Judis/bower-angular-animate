@@ -1346,7 +1346,7 @@ var $AnimateCssProvider = ['$animateProvider', function($animateProvider) {
           }
 
           if (setupFallbackTimer) {
-            var timer = $timeout(onAnimationExpired, timerTime, false);
+            var timer = $timeout(onAnimationExpired, timerTime > 500 ? 500 : timerTime, false);
             animationsData[0] = {
               timer: timer,
               expectedEndTime: endTime
